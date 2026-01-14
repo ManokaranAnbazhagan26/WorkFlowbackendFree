@@ -1,0 +1,1028 @@
+{
+    "/v1/C0IUj/YMDwnk7WaOP8HZk": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Add Flow",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "FlowName": {
+                                    "type": "string",
+                                    "description": "Flow Name"
+                                },
+                                "FlowDescription": {
+                                    "type": "string",
+                                    "description": "Flow Description"
+                                },
+                                "FlowNodePositionDetails": {
+                                    "type": "object",
+                                    "description": "Flow Node Position Details"
+                                },
+                                "FlowNodeEdgesDetails": {
+                                    "type": "object",
+                                    "description": "Flow Node Edges Details"
+                                },
+                                "OwnerID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Owner ID"
+                                },
+                                "CreatedBy": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Created By"
+                                }
+                            },
+                            "required": [
+                                "FlowName",
+                                "FlowDescription",
+                                "FlowNodePositionDetails",
+                                "FlowNodeEdgesDetails",
+                                "OwnerID",
+                                "CreatedBy"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/vUhrqmonAflKTSF": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Update Flow Position and Connection Status",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "FlowID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Flow ID"
+                                },
+                                "FlowNodeEdgesDetails": {
+                                    "type": "object",
+                                    "description": "Flow Node Edges Details"
+                                },
+                                "FlowNodePositionDetails": {
+                                    "type": "object",
+                                    "description": "Flow Node Position Details"
+                                }
+                            },
+                            "required": [
+                                "FlowID",
+                                "FlowNodeEdgesDetails",
+                                "FlowNodePositionDetails"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/XOT0V5ZPYlIaCeP": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Get Flow List",
+            "requestBody": {
+                "required": false
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/LGHdL4xQ3gOGQtj": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Add Service",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ServiceName": {
+                                    "type": "string",
+                                    "description": "Service Name"
+                                },
+                                "ServiceType": {
+                                    "type": "string",
+                                    "description": "Service Type"
+                                },
+                                "ServiceDescription": {
+                                    "type": "string",
+                                    "description": "Service Description"
+                                },
+                                "ServiceProperties": {
+                                    "type": "object",
+                                    "description": "Service Properties"
+                                },
+                                "CreatedBy": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Created By"
+                                }
+                            },
+                            "required": [
+                                "ServiceName",
+                                "ServiceType",
+                                "ServiceDescription",
+                                "ServiceProperties",
+                                "CreatedBy"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/rQGOhFNjXSghrii": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Add Service Elements",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ServiceID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Service ID"
+                                },
+                                "ServiceElementName": {
+                                    "type": "string",
+                                    "description": "Service Element Name"
+                                },
+                                "ServiceDescription": {
+                                    "type": "string",
+                                    "description": "Service Description"
+                                },
+                                "ServiceElementProperties": {
+                                    "type": "object",
+                                    "description": "Service Element Properties"
+                                },
+                                "CreatedBy": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Created By"
+                                }
+                            },
+                            "required": [
+                                "ServiceName",
+                                "ServiceType",
+                                "ServiceDescription",
+                                "ServiceProperties",
+                                "CreatedBy"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/uhwOxbD50pTXAxR": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Get Service List",
+            "requestBody": {
+                "required": false
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/DXPVeS4KTsXIldn": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Get Service Details",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ServiceID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Service ID"
+                                }
+                            },
+                            "required": [
+                                "ServiceID"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/Nn7tHmZhHgCICaW": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Add Settings",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ServiceID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Service ID"
+                                },
+                                "SettingName": {
+                                    "type": "string",
+                                    "description": "Setting Name"
+                                },
+                                "SettingValue": {
+                                    "type": "object",
+                                    "description": "Setting Value"
+                                },
+                                "CreatedBy": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Created By"
+                                }
+                            },
+                            "required": [
+                                "ServiceID",
+                                "SettingName",
+                                "SettingValue",
+                                "CreatedBy"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/H9bG8y9ZsokMn9V": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Get Setting Details",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "ServiceID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Service ID"
+                                }
+                            },
+                            "required": [
+                                "ServiceID"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/mC2n5AkGGG06yBD": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Add Flow Details",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "FlowID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Flow ID"
+                                },
+                                "ServiceID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Service ID"
+                                },
+                                "StepNumber": {
+                                    "type": "integer",
+                                    "description": "Step Number"
+                                },
+                                "DetailsPosition": {
+                                    "type": "object",
+                                    "description": "Details Position"
+                                },
+                                "SourceDetailsID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Source Details ID"
+                                },
+                                "DestinaionDetailsID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Destinaion Details ID"
+                                },
+                                "DetailsProperties": {
+                                    "type": "object",
+                                    "description": "Details Properties"
+                                },
+                                "CreatedBy": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Created By"
+                                }
+                            },
+                            "required": [
+                                "FlowID",
+                                "ServiceID",
+                                "StepNumber",
+                                "DetailsProperties",
+                                "CreatedBy"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/KkJtsrAefv4YAzO": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Get Flow Details",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "FlowID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Flow ID"
+                                },
+                                "ServiceID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Service ID"
+                                }
+                            },
+                            "required": [
+                                "FlowID",
+                                "ServiceID"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/FlY23ii0vDIITpZ": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Update Flow Details Connection",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "FlowID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "FlowID ID"
+                                }
+                            },
+                            "required": [
+                                "FlowID"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/KM49SYh7EWpxvzL": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Send Emails",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "EmailRecipient": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "description": "Email Recipient Array"
+                                },
+                                "EmailSubject": {
+                                    "type": "string",
+                                    "description": "Email Subject"
+                                },
+                                "BodyType": {
+                                    "type": "string",
+                                    "enum": [
+                                        "text",
+                                        "html"
+                                    ],
+                                    "description": "Body Type"
+                                },
+                                "MessageBody": {
+                                    "type": "string",
+                                    "description": "Message Body"
+                                },
+                                "CCEmails": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "description": "Carbon Copy Email Array"
+                                },
+                                "BCCEmails": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "description": "Blind Carbon Copy Email Array"
+                                }
+                            },
+                            "required": [
+                                "EmailRecipient",
+                                "EmailSubject",
+                                "BodyType",
+                                "MessageBody"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    },
+    "/v1/C0IUj/d1VoMyumqz9g8T9": {
+        "post": {
+            "tags": [
+                "Data"
+            ],
+            "summary": "Update Service Details Properties",
+            "requestBody": {
+                "required": true,
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "DetailsProperties": {
+                                    "type": "object",
+                                    "description": "Details Properties"
+                                },
+                                "FlowDetailID": {
+                                    "type": "string",
+                                    "format": "uuid",
+                                    "description": "Flow Detail ID"
+                                }
+                            },
+                            "required": [
+                                "DetailsProperties",
+                                "FlowDetailID"
+                            ]
+                        }
+                    }
+                }
+            },
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "400": {
+                    "description": "Bad Request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "error": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "500": {
+                    "description": "Internal Server Error"
+                }
+            },
+            "security": [
+                {
+                    "bearerAuth": []
+                }
+            ]
+        }
+    }
+}

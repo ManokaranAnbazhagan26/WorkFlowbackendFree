@@ -1,0 +1,10 @@
+{
+    "to":[],
+    "cc":[],
+    "bcc":[],
+    "subject":"New Order Placed",
+    "body-type":"html", // text or html
+    "body":"<h1>New Order Placed</h1>",
+    "sender-email":"",
+    "attachment":[] //file or docs
+}
