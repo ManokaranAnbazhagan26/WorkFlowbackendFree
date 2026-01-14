@@ -18,9 +18,12 @@ Thumbs.db
 
 # Existing IDE-specific files
 /nbproject/
-/.idea/*
+/idea/*
 *.tmlanguage.cache
 *.tmPreferences.cache
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+
+# Ignore shared public files
+publics/shared/

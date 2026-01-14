@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { swaggerSpec } = require("./src/utils/services/swagger");
@@ -24,39 +25,48 @@ app.use("/v1/C0IUj", dataRoutes);
 app.get("/", (req, res) => {
   res.status(200).send({ message: "Welcome to Flow Diagram API" });
 });
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error("Error:", err);
+  res.status(500).json({
+    message: "Internal server error",
+    error: process.env.NODE_ENV === "production" ? {} : err.message,
+  });
+});
+
 app.use((req, res) => {
   res
     .status(404)
     .send({ message: "Resource not found ! Please check the URL" });
 });
 
-// For local development only
-if (process.env.NODE_ENV !== "production") {
-  const http = require("http");
-  const { Server } = require("socket.io");
-  const cron = require("node-cron");
-  const { socketIO } = require("./src/utils/services/socket");
-  const { flowNotification } = require("./src/controller/flow.controller");
+// Start server (works for both local and Render)
+const http = require("http");
+const { Server } = require("socket.io");
+const cron = require("node-cron");
+const { socketIO } = require("./src/utils/services/socket");
+const { flowNotification } = require("./src/controller/flow.controller");
 
-  const server = http.createServer(app);
-  const io = new Server(server, {
-    path: "/socket.io/",
-    cors: {
-      origin: "*",
-    },
-  });
+const server = http.createServer(app);
+const io = new Server(server, {
+  path: "/socket.io/",
+  cors: {
+    origin: "*",
+  },
+});
 
-  socketIO(io);
+socketIO(io);
 
-  cron.schedule("*/30 * * * *", () => {
-    flowNotification();
-  });
+cron.schedule("*/30 * * * *", () => {
+  flowNotification();
+});
 
-  const port = process.env.PORT || 4311;
-  server.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-  });
-}
+// Use PORT from environment (Render provides this)
+const port = process.env.PORT || 4311;
+server.listen(port, "0.0.0.0", () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 // Export for Vercel
 module.exports = app;
